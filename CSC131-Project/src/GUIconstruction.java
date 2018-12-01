@@ -21,7 +21,7 @@ public class GUIconstruction {
 		menuBar.add(helpMenu);
 		menuBar.add(optionsMenu);
 		JMenuItem optionsMenu11 = new JMenuItem("Documents");
-        optionsMenu.add(optionsMenu11);
+			optionsMenu.add(optionsMenu11);
 		frame.setJMenuBar(menuBar);
 
 		//Create the three tabs 
