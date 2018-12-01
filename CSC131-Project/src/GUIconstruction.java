@@ -12,6 +12,7 @@ public class GUIconstruction {
 		JTabbedPane  tabbedPane;
 		JMenuBar     menuBar;
 		JMenu        helpMenu, optionsMenu; 
+		JScrollPane  scrollpane;
 		//JMenuItem    item; Can add items inside the help and options in menu
 
 		//create and add the menu bar to the frame
@@ -40,8 +41,10 @@ public class GUIconstruction {
 
 		 
 		 summarize = new JPanel();
-		// summarize.setLayout(new BorderLayout());Uncomment later for changes (choose a layout for each tab)
+		 summarize.setLayout(new BorderLayout());
 		 tabbedPane.addTab("Summarize Documents",  summarize);
+		  scrollpane = new JScrollPane();
+	       summarize.add(scrollpane, BorderLayout.CENTER);
 
 		 //The current frame is set to these 
 		 frame.setSize(800,600);
