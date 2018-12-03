@@ -37,7 +37,6 @@ public class GUIconstruction {
 	    }});    
 
 		
-
 		//Create the three tabs 
 		tabbedPane = new JTabbedPane();
 		contentPane.setLayout(new BorderLayout());
