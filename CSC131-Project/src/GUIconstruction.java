@@ -27,14 +27,14 @@ public class GUIconstruction {
 		frame.setJMenuBar(menuBar);
 		
 		// help menu item
-	      menuItem = new JMenuItem("About",KeyEvent.VK_T);
-	      helpMenu.add(menuItem);
+	    menuItem = new JMenuItem("About",KeyEvent.VK_T);
+	    helpMenu.add(menuItem);
 	      
-	      menuItem.addActionListener(new ActionListener(){  
-	      public void actionPerformed(ActionEvent e){ 
-	      JLabel label = new JLabel("Pirex - (personal information retrieval experimental system) is an information retrieval system that individuals can use to investigate their own texts..");
-	      JOptionPane.showMessageDialog(null,label,"About",JOptionPane.INFORMATION_MESSAGE);
-	      }});    
+	    menuItem.addActionListener(new ActionListener(){  
+	    public void actionPerformed(ActionEvent e){ 
+	    JLabel label = new JLabel("Pirex - (personal information retrieval experimental system) is an information retrieval system that individuals can use to investigate their own texts..");
+	    JOptionPane.showMessageDialog(null,label,"About",JOptionPane.INFORMATION_MESSAGE);
+	    }});    
 
 		
 
