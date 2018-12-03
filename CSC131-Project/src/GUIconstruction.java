@@ -15,7 +15,6 @@ public class GUIconstruction {
 		JScrollPane  scrollpane;
 		JMenuItem    menuItem;; //Can add items inside the help and options in menu
 
-
 		//create and add the menu bar to the frame
 		menuBar     = new JMenuBar();
 		helpMenu    = new JMenu("Help");
