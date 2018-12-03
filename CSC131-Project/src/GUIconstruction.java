@@ -36,7 +36,6 @@ public class GUIconstruction {
 	    JOptionPane.showMessageDialog(null,label,"About",JOptionPane.INFORMATION_MESSAGE);
 	    }});    
 
-		
 		//Create the three tabs 
 		tabbedPane = new JTabbedPane();
 		contentPane.setLayout(new BorderLayout());
