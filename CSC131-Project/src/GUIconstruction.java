@@ -12,7 +12,10 @@ public class GUIconstruction {
 		JTabbedPane  tabbedPane;
 		JMenuBar     menuBar;
 		JMenu        helpMenu, optionsMenu; 
+		JScrollPane  scrollpane;
 		//JMenuItem    item; Can add items inside the help and options in menu
+		JMenuItem    menuItem;; //Can add items inside the help and options in menu
+
 
 		//create and add the menu bar to the frame
 		menuBar     = new JMenuBar();
@@ -20,7 +23,21 @@ public class GUIconstruction {
 		optionsMenu = new JMenu("Options");
 		menuBar.add(helpMenu);
 		menuBar.add(optionsMenu);
+		JMenuItem optionsMenu11 = new JMenuItem("Documents");
+		optionsMenu.add(optionsMenu11);
 		frame.setJMenuBar(menuBar);
+		
+		// help menu item
+	      menuItem = new JMenuItem("About",KeyEvent.VK_T);
+	      helpMenu.add(menuItem);
+	      
+	      menuItem.addActionListener(new ActionListener(){  
+	      public void actionPerformed(ActionEvent e){ 
+	      JLabel label = new JLabel("Pirex - (personal information retrieval experimental system) is an information retrieval system that individuals can use to investigate their own texts..");
+	      JOptionPane.showMessageDialog(null,label,"About",JOptionPane.INFORMATION_MESSAGE);
+	      }});    
+
+		
 
 		//Create the three tabs 
 		tabbedPane = new JTabbedPane();
@@ -38,8 +55,10 @@ public class GUIconstruction {
 
 		 
 		 summarize = new JPanel();
-		// summarize.setLayout(new BorderLayout());Uncomment later for changes (choose a layout for each tab)
+		 summarize.setLayout(new BorderLayout());
 		 tabbedPane.addTab("Summarize Documents",  summarize);
+		  scrollpane = new JScrollPane();
+	       summarize.add(scrollpane, BorderLayout.CENTER);
 
 		 //The current frame is set to these 
 		 frame.setSize(800,600);
