@@ -35,7 +35,7 @@ public class GUIconstruction {
 	    JLabel label = new JLabel("Pirex - (personal information retrieval experimental system) is an information retrieval system that individuals can use to investigate their own texts..");
 	    JOptionPane.showMessageDialog(null,label,"About",JOptionPane.INFORMATION_MESSAGE);
 	    }});    
-
+ 
 		//Create the three tabs 
 		tabbedPane = new JTabbedPane();
 		contentPane.setLayout(new BorderLayout());
