@@ -13,7 +13,6 @@ public class GUIconstruction {
 		JMenuBar     menuBar;
 		JMenu        helpMenu, optionsMenu; 
 		JScrollPane  scrollpane;
-		//JMenuItem    item; Can add items inside the help and options in menu
 		JMenuItem    menuItem;; //Can add items inside the help and options in menu
 
 
