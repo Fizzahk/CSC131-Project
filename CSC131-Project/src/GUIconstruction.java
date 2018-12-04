@@ -4,6 +4,7 @@ import java.awt.event.*;
 
 
 public class GUIconstruction {
+	
 	public static void main(String[]args) {
 		
 		JFrame       frame = new JFrame("Pirex");
@@ -31,9 +32,10 @@ public class GUIconstruction {
 	      
 	    menuItem.addActionListener(new ActionListener(){  
 	    public void actionPerformed(ActionEvent e){ 
-	    JLabel label = new JLabel("Pirex - (personal information retrieval experimental system) is an information retrieval system that individuals can use to investigate their own texts..");
+	    JLabel label = new JLabel("Pirex - (Personal Information Retrieval Experimental System) is an information retrieval system that individuals can use to investigate their own texts..");
 	    JOptionPane.showMessageDialog(null,label,"About",JOptionPane.INFORMATION_MESSAGE);
-	    }});    
+	    }}); 
+	    
  
 		//Create the three tabs 
 		tabbedPane = new JTabbedPane();
@@ -42,27 +44,25 @@ public class GUIconstruction {
 
 		search = new JPanel();
 		//search.setLayout(new BorderLayout()); Uncomment later for changes (choose a layout for each tab)
-		tabbedPane.addTab("Search For documents", search);
-
+		tabbedPane.addTab("Search For Documents", search);
+		frame.getContentPane().setLayout(new FlowLayout());
+		frame.getContentPane().setLayout(new FlowLayout());
 
 		load = new JPanel();
 		// load.setLayout(new BorderLayout());Uncomment later for changes (choose a layout for each tab)
 		tabbedPane.addTab("Load Documents",  load);
-
 		 
-		 summarize = new JPanel();
-		 summarize.setLayout(new BorderLayout());
-		 tabbedPane.addTab("Summarize Documents",  summarize);
-		  scrollpane = new JScrollPane();
-	       summarize.add(scrollpane, BorderLayout.CENTER);
-
+		summarize = new JPanel();
+		summarize.setLayout(new BorderLayout());
+		tabbedPane.addTab("Summarize Documents",  summarize);
+		scrollpane = new JScrollPane();
+	    summarize.add(scrollpane, BorderLayout.CENTER);
+	    
 		 //The current frame is set to these 
 		 frame.setSize(800,600);
 		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 frame.setVisible(true);
 		 frame.setResizable(true); 
-	
+			 
 	}
-	
-	
 }
