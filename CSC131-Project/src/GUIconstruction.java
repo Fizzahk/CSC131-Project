@@ -11,7 +11,7 @@ public class GUIconstruction {
 		JPanel       search, load, summarize;
 		JTabbedPane  tabbedPane;
 		JMenuBar     menuBar;
-		JMenu        helpMenu, optionsMenu, fileMenu;
+		JMenu        helpMenu, optionsMenu, fileMenu,editMenu;
 		JScrollPane  scrollpane;
 		JMenuItem    menuItem; //Can add items inside the file, help, and options in menu bar
 		JTextField   textField;
@@ -24,6 +24,7 @@ public class GUIconstruction {
 		fileMenu 	= new JMenu("File"); //Creates file Menu to the Menu Bar - Pawan (PK) Khatri
 		helpMenu    = new JMenu("Help");
 		optionsMenu = new JMenu("Options");
+		editMenu    =new JMenu("Edit");      
 		
 		menuBar.add(fileMenu); //Adds file Menu to the Menu Bar - Pawan (PK) Khatri
 		menuBar.add(optionsMenu);
