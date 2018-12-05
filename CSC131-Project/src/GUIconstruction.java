@@ -11,7 +11,7 @@ public class GUIconstruction {
 		JPanel       search, load, summarize;
 		JTabbedPane  tabbedPane;
 		JMenuBar     menuBar;
-		JMenu        helpMenu, optionsMenu, fileMenu,editMenu;
+		JMenu        helpMenu, optionsMenu, fileMenu, editMenu, historyMenu, viewMenu;
 		JScrollPane  scrollpane;
 		JMenuItem    menuItem; //Can add items inside the file, help, and options in menu bar
 		JTextField   textField;
@@ -24,13 +24,17 @@ public class GUIconstruction {
 		fileMenu 	= new JMenu("File"); //Creates file Menu to the Menu Bar - Pawan (PK) Khatri
 		helpMenu    = new JMenu("Help");
 		optionsMenu = new JMenu("Options");
-		editMenu    =new JMenu("Edit");      
+		editMenu    =new JMenu("Edit"); 
+		historyMenu = new JMenu("History");
+		viewMenu    = new JMenu("View");
 		
 		menuBar.add(fileMenu); //Adds file Menu to the Menu Bar - Pawan (PK) Khatri
 		menuBar.add(optionsMenu);
 		menuBar.add(helpMenu);
 		menuBar.add(editMenu);
-		
+		menuBar.add(historyMenu);
+		menuBar.add(viewMenu);
+
 		//Creates File Menu Item (Exit) - Pawan (PK) Khatri
 		JMenuItem exit = new JMenuItem("Exit", KeyEvent.VK_T);
 		fileMenu.add(exit);
@@ -43,6 +47,18 @@ public class GUIconstruction {
 		//Creates Help Menu Item
 	    menuItem = new JMenuItem("About",KeyEvent.VK_T);
 	    helpMenu.add(menuItem);
+	    
+	    //Creates History Menu Item  
+	  	JMenuItem historymenu1 = new JMenuItem("Recent Searches", KeyEvent.VK_T);
+	  	historyMenu.add(historymenu1);
+	  	
+	    //Creates View Menu Item 
+	  	JMenuItem viewmenu1= new JMenuItem("Zoom", KeyEvent.VK_T);
+	  	viewMenu.add(viewmenu1);
+
+	    //Adds Sub Item into View Menu Item
+	    JMenuItem viewmenu2= new JMenuItem("Toggle Fullscreen", KeyEvent.VK_T);
+         viewMenu.add(viewmenu2);
 	    
 	    //Adds an action listener to the File Menu Bar Item (Exit) - Pawan (PK) Khatri
 	    exit.addActionListener(new ActionListener(){  
