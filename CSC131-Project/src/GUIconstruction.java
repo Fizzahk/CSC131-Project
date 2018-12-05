@@ -24,7 +24,7 @@ public class GUIconstruction {
 		fileMenu 	= new JMenu("File"); //Creates file Menu to the Menu Bar - Pawan (PK) Khatri
 		helpMenu    = new JMenu("Help");
 		optionsMenu = new JMenu("Options");
-		editMenu    =new JMenu("Edit"); 
+		editMenu    = new JMenu("Edit"); 
 		historyMenu = new JMenu("History");
 		viewMenu    = new JMenu("View");
 		
@@ -63,7 +63,7 @@ public class GUIconstruction {
 	    //Adds an action listener to the File Menu Bar Item (Exit) - Pawan (PK) Khatri
 	    exit.addActionListener(new ActionListener(){  
 	    public void actionPerformed(ActionEvent e){ 
-	    	JOptionPane.showMessageDialog(null,"Press ALT-F4 (Windows) or ⌘Q (Mac) to EXIT this application.", "Close Application",JOptionPane.INFORMATION_MESSAGE);
+	    	JOptionPane.showMessageDialog(null,"Press ALT-F4 (Windows) or ⌘Q (Mac) to EXIT this application.", "Close Application",JOptionPane.WARNING_MESSAGE);
 	    }});   
 	    
 	    //Adds an action listener to the Help Menu Item
