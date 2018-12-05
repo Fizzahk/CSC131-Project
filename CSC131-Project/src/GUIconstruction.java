@@ -13,12 +13,11 @@ public class GUIconstruction {
 		JMenuBar     menuBar;
 		JMenu        helpMenu, optionsMenu, fileMenu;
 		JScrollPane  scrollpane;
-		JMenuItem    menuItem;; //Can add items inside the help and options in menu
+		JMenuItem    menuItem; //Can add items inside the file, help, and options in menu bar
 		JTextField   textField;
 		JTextArea    textOfLongFormDisplay;
 		JLabel       titleLabel;
 		JButton      clearButton;
-
 
 		//Creates and Adds a menu bar to the Pirex Frame
 		menuBar     = new JMenuBar();
@@ -27,21 +26,33 @@ public class GUIconstruction {
 		optionsMenu = new JMenu("Options");
 		
 		menuBar.add(fileMenu); //Adds file Menu to the Menu Bar - Pawan (PK) Khatri
-		menuBar.add(helpMenu);
 		menuBar.add(optionsMenu);
+		menuBar.add(helpMenu);
+		
+		//Creates File Menu Item (Exit) - Pawan (PK) Khatri
+		JMenuItem exit = new JMenuItem("Exit", KeyEvent.VK_T);
+		fileMenu.add(exit);
+		
 		JMenuItem optionsMenu11 = new JMenuItem("Documents");
 		optionsMenu.add(optionsMenu11);
+		
 		frame.setJMenuBar(menuBar);
 		
 		//Creates Help Menu Item
 	    menuItem = new JMenuItem("About",KeyEvent.VK_T);
 	    helpMenu.add(menuItem);
-	      
+	    
+	    //Adds an action listener to the File Menu Bar Item (Exit) - Pawan (PK) Khatri
+	    exit.addActionListener(new ActionListener(){  
+	    public void actionPerformed(ActionEvent e){ 
+	    	JOptionPane.showMessageDialog(null,"Press ALT-F4 (Windows) or ⌘Q (Mac) to EXIT this application.", "Close Application",JOptionPane.INFORMATION_MESSAGE);
+	    }});   
+	    
 	    //Adds an action listener to the Help Menu Item
 	    menuItem.addActionListener(new ActionListener(){  
 	    public void actionPerformed(ActionEvent e){ 
-	    JOptionPane.showMessageDialog(null,"Pirex - (personal information retrieval experimental system) is an information \n retrieval system that individuals can use to investigate their own texts..",
-	    "About",JOptionPane.INFORMATION_MESSAGE);
+	    	JOptionPane.showMessageDialog(null,"Pirex - (Personal Information Retrieval Experimental System) is an information \n retrieval system that individuals can use to investigate their own texts.",
+	    			"About",JOptionPane.INFORMATION_MESSAGE);
 	    }});    
  
 		//Create the three tabs 
@@ -55,38 +66,38 @@ public class GUIconstruction {
 		tabbedPane.addTab("Search For Documents", search);
 		
 		//Title "Query"............................
-	     titleLabel = new JLabel();
-	     titleLabel.setText("Query:");
-		 search.add(titleLabel);
+	    titleLabel = new JLabel();
+	    titleLabel.setText("Query:");
+	    search.add(titleLabel);
 	       
-	     //Text area
-	     textField = new JTextField(55);
-	     search.add(textField);
+	    //Text area
+	    textField = new JTextField(55);
+	    search.add(textField);
 	       
-	     //clear button 
-	     clearButton = new JButton();
-		 clearButton.setText("Clear");
-		 search.add(clearButton);
-		   //end clear button 
+	    //clear button 
+	    clearButton = new JButton();
+		clearButton.setText("Clear");
+		search.add(clearButton);
+		//end clear button 
 	       
-	      //Text Short Form Dysplay
-	     JTextArea ta = new JTextArea(10, 65);
-	     ta.setLineWrap(true);
-	     search.add(new JScrollPane(ta));
+	    //Text Short Form Dysplay
+	    JTextArea ta = new JTextArea(10, 65);
+	    ta.setLineWrap(true);
+	    search.add(new JScrollPane(ta));
 	      
-	       //Text Long Form Dysplay
-	     textOfLongFormDisplay = new JTextArea(10, 64);
-	     JScrollPane  textOfLongFormDisplaySP = new JScrollPane(textOfLongFormDisplay,
-	     JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-	     JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-	     search.add(textOfLongFormDisplaySP,"South");
+	    //Text Long Form Dysplay
+	    textOfLongFormDisplay = new JTextArea(10, 64);
+	    JScrollPane  textOfLongFormDisplaySP = new JScrollPane(textOfLongFormDisplay,
+	    JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+	    JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+	    search.add(textOfLongFormDisplaySP,"South");
 	     
-	     clearButton.addActionListener(new ActionListener(){  
-	     public void actionPerformed(ActionEvent e){ 
-		 textField.setText("");
-		 textOfLongFormDisplay.setText("");
-	     ta.setText("");
-	     }});
+	    clearButton.addActionListener(new ActionListener(){  
+	    public void actionPerformed(ActionEvent e){ 
+	    	textField.setText("");
+	    	textOfLongFormDisplay.setText("");
+	    	ta.setText("");
+	    }});
 	    
 		//Creates Load Tab
 		load = new JPanel();
@@ -105,6 +116,5 @@ public class GUIconstruction {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setResizable(true); 
-	
 	}
 }
