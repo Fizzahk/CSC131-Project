@@ -29,16 +29,17 @@ public class GUIconstruction {
 		viewMenu    = new JMenu("View");
 		
 		menuBar.add(fileMenu); //Adds file Menu to the Menu Bar - Pawan (PK) Khatri
+		menuBar.add(viewMenu);
 		menuBar.add(optionsMenu);
-		menuBar.add(helpMenu);
 		menuBar.add(editMenu);
 		menuBar.add(historyMenu);
-		menuBar.add(viewMenu);
+		menuBar.add(helpMenu);
 
 		//Creates File Menu Item (Exit) - Pawan (PK) Khatri
 		JMenuItem exit = new JMenuItem("Exit", KeyEvent.VK_T);
 		fileMenu.add(exit);
 		
+		//Creates Option Menu Item (Documents)
 		JMenuItem optionsMenu11 = new JMenuItem("Documents");
 		optionsMenu.add(optionsMenu11);
 		
@@ -58,9 +59,33 @@ public class GUIconstruction {
 
 	    //Adds Sub Item into View Menu Item
 	    JMenuItem viewmenu2= new JMenuItem("Toggle Fullscreen", KeyEvent.VK_T);
-         viewMenu.add(viewmenu2);
+        viewMenu.add(viewmenu2);
 	    
-	    //Adds an action listener to the File Menu Bar Item (Exit) - Pawan (PK) Khatri
+  	    //Adds an action listener to the Options Menu Bar Item (Documents) - Pawan (PK) Khatri
+  	    optionsMenu11.addActionListener(new ActionListener(){  
+  	    public void actionPerformed(ActionEvent e){ 
+  	    	JOptionPane.showMessageDialog(null,"This feature is currently unavailable.", "Documents",JOptionPane.WARNING_MESSAGE);
+  	    }}); 
+ 	    
+         //Adds an action listener to the View Menu Bar Item (Zoom) - Pawan (PK) Khatri
+ 	    viewmenu1.addActionListener(new ActionListener(){  
+ 	    public void actionPerformed(ActionEvent e){ 
+ 	    	JOptionPane.showMessageDialog(null,"This feature is currently unavailable.", "Zoom",JOptionPane.WARNING_MESSAGE);
+ 	    }});   
+ 	    
+ 	    //Adds an action listener to the View Menu Bar Item (Toggle Fullscreen) - Pawan (PK) Khatri
+ 	    viewmenu2.addActionListener(new ActionListener(){  
+ 	    public void actionPerformed(ActionEvent e){ 
+ 	    	JOptionPane.showMessageDialog(null,"This feature is currently unavailable.", "Toggle Fullscreen",JOptionPane.WARNING_MESSAGE);
+ 	    }}); 
+ 	    
+ 	    //Adds an action listener to the History Menu Bar Item (Recent Searches) - Pawan (PK) Khatri
+ 	    historymenu1.addActionListener(new ActionListener(){  
+ 	    public void actionPerformed(ActionEvent e){ 
+ 	    	JOptionPane.showMessageDialog(null,"This feature is currently unavailable.", "Recent Searches",JOptionPane.WARNING_MESSAGE);
+ 	    }}); 
+         
+         //Adds an action listener to the File Menu Bar Item (Exit) - Pawan (PK) Khatri
 	    exit.addActionListener(new ActionListener(){  
 	    public void actionPerformed(ActionEvent e){ 
 	    	JOptionPane.showMessageDialog(null,"Press ALT-F4 (Windows) or ⌘Q (Mac) to EXIT this application.", "Close Application",JOptionPane.WARNING_MESSAGE);
