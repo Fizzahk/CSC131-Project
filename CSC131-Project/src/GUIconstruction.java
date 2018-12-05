@@ -8,13 +8,13 @@ public class GUIconstruction {
 		
 		JFrame       frame = new JFrame("Pirex");
 		Container    contentPane = frame.getContentPane();
-		JPanel       search, load, summarize;
+		JPanel       search, load, summarize, sp1, sp2, sp3, lp1, lp2;
 		JTabbedPane  tabbedPane;
 		JMenuBar     menuBar;
 		JMenu        helpMenu, optionsMenu, fileMenu, editMenu, historyMenu, viewMenu;
 		JScrollPane  scrollpane;
 		JMenuItem    menuItem; //Can add items inside the file, help, and options in menu bar
-		JTextField   textField;
+		JTextField   textField, textField2;
 		JTextArea    textOfLongFormDisplay;
 		JLabel       titleLabel;
 		JButton      clearButton;
@@ -102,62 +102,84 @@ public class GUIconstruction {
 		tabbedPane = new JTabbedPane();
 		contentPane.setLayout(new BorderLayout());
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
-
-		//Creates Search Tab
+		
+		//Start of search tab
 		search = new JPanel();
-		//search.setLayout(new BorderLayout()); Uncomment later for changes (choose a layout for each tab)
+		search.setLayout(new BorderLayout());
 		tabbedPane.addTab("Search For Documents", search);
-		
-		//Title "Query"............................
-	    titleLabel = new JLabel();
-	    titleLabel.setText("Query:");
-	    search.add(titleLabel);
-	       
-	    //Text area
-	    textField = new JTextField(55);
-	    search.add(textField);
-	       
-	    //clear button 
-	    clearButton = new JButton();
-		clearButton.setText("Clear");
-		search.add(clearButton);
-		//end clear button 
-	       
-	    //Text Short Form Dysplay
-	    JTextArea ta = new JTextArea(10, 65);
-	    ta.setLineWrap(true);
-	    search.add(new JScrollPane(ta));
-	      
-	    //Text Long Form Dysplay
-	    textOfLongFormDisplay = new JTextArea(10, 64);
-	    JScrollPane  textOfLongFormDisplaySP = new JScrollPane(textOfLongFormDisplay,
-	    JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-	    JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-	    search.add(textOfLongFormDisplaySP,"South");
-	     
-	    clearButton.addActionListener(new ActionListener(){  
-	    public void actionPerformed(ActionEvent e){ 
-	    	textField.setText("");
-	    	textOfLongFormDisplay.setText("");
-	    	ta.setText("");
-	    }});
-	    
-		//Creates Load Tab
-		load = new JPanel();
-		// load.setLayout(new BorderLayout());Uncomment later for changes (choose a layout for each tab)
-		tabbedPane.addTab("Load Documents",  load);
-		
-		//Creates Summary Tab
-		summarize = new JPanel();
-		summarize.setLayout(new BorderLayout());
-		tabbedPane.addTab("Summarize Documents",  summarize);
-		scrollpane = new JScrollPane();
-	    summarize.add(scrollpane, BorderLayout.CENTER);
+				
+	    //first panel in the search tab that has query, textfield and button
+		sp1 = new JPanel(new BorderLayout());
+				
+	             titleLabel = new JLabel();
+			     titleLabel.setText("Query:");
+			     
+			     textField = new JTextField(600);
+			     //clear button 
+			     clearButton = new JButton();
+				 clearButton.setText("Clear");
+				
+			     sp1.add(titleLabel,BorderLayout.WEST);
+			     sp1.add(textField, BorderLayout.CENTER);
+			     sp1.add(clearButton, BorderLayout.EAST);
+				 
+				 
+				 	search.add(sp1, BorderLayout.NORTH);
+				 
+		//second panel in the screen tab that has a textarea 
+		 sp2 = new JPanel(new GridLayout(1, 1, 2, 600));
+				
+				 JTextArea ta = new JTextArea(10, 65);
+			     ta.setLineWrap(true);
+			     sp2.add(new JScrollPane(ta));
+			     
+				 	search.add(sp2, BorderLayout.CENTER);
+			       
+	     // third panel in the search that has the scrollbar    
+		 sp3 = new JPanel(new GridLayout(1, 1, 5, 5));
+			     textOfLongFormDisplay = new JTextArea(10, 64);
+			     JScrollPane  textOfLongFormDisplaySP = new JScrollPane(textOfLongFormDisplay,
+			     JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+			     JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+			     sp3.add(textOfLongFormDisplaySP,"South");
+			     
+				 	search.add(sp3, BorderLayout.SOUTH);
+				  
+			     clearButton.addActionListener(new ActionListener(){  
+		 public void actionPerformed(ActionEvent e){ 
+				 textField.setText("");
+				 textOfLongFormDisplay.setText("");
+			     ta.setText("");
+		 }});
+			    
+				//Start of Load Tab
+			    lp1 = new JPanel();
+			    lp2 = new JPanel();
+				load = new JPanel();
+				load.setLayout(new BorderLayout());
+				lp1.add(load, BorderLayout.NORTH);
+				textField2 = new JTextField(55);
+				lp1.add(textField2, BorderLayout.NORTH);
+				       
 
-		//The current frame is set to these 
-	    frame.setSize(800,600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
-		frame.setResizable(true); 
-	}
-}
+				
+				lp2.add(load,  BorderLayout.SOUTH);
+				tabbedPane.addTab("Load Documents",  load);
+				
+				
+				//Creates Summary Tab
+				summarize = new JPanel();
+				summarize.setLayout(new BorderLayout());
+				tabbedPane.addTab("Summarize Documents",  summarize);
+				
+
+		        frame.pack();
+		       
+				//The current frame is set to these 
+			    frame.setSize(800,600);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setVisible(true);
+				frame.setResizable(true); 
+			
+			}
+		}
