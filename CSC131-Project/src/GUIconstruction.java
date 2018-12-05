@@ -14,10 +14,10 @@ public class GUIconstruction {
 		JMenu        helpMenu, optionsMenu, fileMenu, editMenu, historyMenu, viewMenu;
 		JScrollPane  scrollpane;
 		JMenuItem    menuItem; //Can add items inside the file, help, and options in menu bar
-		JTextField   textField, textField2;
+		JTextField   textField, textField1;
 		JTextArea    textOfLongFormDisplay;
-		JLabel       titleLabel;
-		JButton      clearButton, processButton;
+		JLabel       titleLabel, titleLabel1;
+		JButton      clearButton, processButton, browseButton;
 
 		//Creates and Adds a menu bar to the Pirex Frame
 		menuBar     = new JMenuBar();
@@ -157,8 +157,21 @@ public class GUIconstruction {
 			     load.setLayout(new GridLayout(5, 1)); //gridLayout (rows, columns, horizontal space, vertical space)
 			     tabbedPane.addTab("Load Documents",  load);
 			     
-			    lp1 = new JPanel(new BorderLayout()); // add text file (west), text field(center), browse button (east)
-			    
+			     lp1 = new JPanel(new BorderLayout()); // add text file (west), text field(center), browse button (east)
+			     titleLabel1 = new JLabel();
+			     titleLabel1.setText("Text File:");
+			     
+			     textField1 = new JTextField(600);
+			     
+			     //browse button 
+			     browseButton = new JButton();
+				 browseButton.setText("Browse");
+				
+				 //Panel 1
+			     lp1.add(titleLabel1,BorderLayout.WEST);
+			     lp1.add(textField1, BorderLayout.CENTER);
+			     lp1.add(browseButton, BorderLayout.EAST);
+			     
 			    lp2 = new JPanel(new BorderLayout()); // add text file type west), drop menu(center)
 			    
 			    lp3 = new JPanel(new BorderLayout()); // add title, textfield, author, textfield
