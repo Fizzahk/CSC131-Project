@@ -14,6 +14,11 @@ public class GUIconstruction {
 		JMenu        helpMenu, optionsMenu, fileMenu;
 		JScrollPane  scrollpane;
 		JMenuItem    menuItem;; //Can add items inside the help and options in menu
+		JTextField   textField;
+		JTextArea    textOfLongFormDisplay;
+		JLabel       titleLabel;
+		JButton      clearButton;
+
 
 		//Creates and Adds a menu bar to the Pirex Frame
 		menuBar     = new JMenuBar();
@@ -35,8 +40,8 @@ public class GUIconstruction {
 	    //Adds an action listener to the Help Menu Item
 	    menuItem.addActionListener(new ActionListener(){  
 	    public void actionPerformed(ActionEvent e){ 
-	    JLabel label = new JLabel("Pirex - (Personal Information Retrieval Experimental System) is an information retrieval system that individuals can use to investigate their own texts..");
-	    JOptionPane.showMessageDialog(null,label,"About",JOptionPane.INFORMATION_MESSAGE);
+	    JOptionPane.showMessageDialog(null,"Pirex - (personal information retrieval experimental system) is an information \n retrieval system that individuals can use to investigate their own texts..",
+	    "About",JOptionPane.INFORMATION_MESSAGE);
 	    }});    
  
 		//Create the three tabs 
@@ -49,6 +54,39 @@ public class GUIconstruction {
 		//search.setLayout(new BorderLayout()); Uncomment later for changes (choose a layout for each tab)
 		tabbedPane.addTab("Search For Documents", search);
 		
+		//Title "Query"............................
+	     titleLabel = new JLabel();
+	     titleLabel.setText("Query:");
+		 search.add(titleLabel);
+	       
+	     //Text area
+	     textField = new JTextField(55);
+	     search.add(textField);
+	       
+	     //clear button 
+	     clearButton = new JButton();
+		 clearButton.setText("Clear");
+		 search.add(clearButton);
+		   //end clear button 
+	       
+	      //Text Short Form Dysplay
+	     JTextArea ta = new JTextArea(10, 65);
+	     ta.setLineWrap(true);
+	     search.add(new JScrollPane(ta));
+	      
+	       //Text Long Form Dysplay
+	     textOfLongFormDisplay = new JTextArea(10, 64);
+	     JScrollPane  textOfLongFormDisplaySP = new JScrollPane(textOfLongFormDisplay,
+	     JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+	     JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+	     search.add(textOfLongFormDisplaySP,"South");
+	     
+	     clearButton.addActionListener(new ActionListener(){  
+	     public void actionPerformed(ActionEvent e){ 
+		 textField.setText("");
+		 textOfLongFormDisplay.setText("");
+	     ta.setText("");
+	     }});
 	    
 		//Creates Load Tab
 		load = new JPanel();
