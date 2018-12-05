@@ -153,20 +153,30 @@ public class GUIconstruction {
 		 }});
 			    
 				//Start of Load Tab
-			    lp1 = new JPanel();
-			    lp2 = new JPanel();
-				load = new JPanel();
-				load.setLayout(new BorderLayout());
-				lp1.add(load, BorderLayout.NORTH);
-				textField2 = new JTextField(55);
-				lp1.add(textField2, BorderLayout.NORTH);
-				       
+			     load = new JPanel();
+			     load.setLayout(new GridLayout(5, 1)); //gridLayout (rows, columns, horizontal space, vertical space)
+			     tabbedPane.addTab("Load Documents",  load);
+			     
+			    lp1 = new JPanel(new BorderLayout()); // add text file (west), text field(center), browse button (east)
+			    
+			    lp2 = new JPanel(new BorderLayout()); // add text file type west), drop menu(center)
+			    
+			    lp3 = new JPanel(new BorderLayout()); // add title, textfield, author, textfield
+			    
+			    lp4 = new JPanel(new BorderLayout()); // process button, to west
+			    		processButton = new JButton(); //creates button
+			    		processButton.setText("Process");
+			    			lp4.add(processButton, BorderLayout.WEST); //add this button to the west
 
-				
-				lp2.add(load,  BorderLayout.SOUTH);
-				tabbedPane.addTab("Load Documents",  load);
-				
-				
+			    lp5 = new JPanel(new BorderLayout()); // add textfield to center 
+
+			    //these will add the 5 panels in the load using gridlayout
+			    load.add(lp1);
+			    load.add(lp2);
+			    load.add(lp3);
+			    load.add(lp4);
+			    load.add(lp5);
+			     
 				//Creates Summary Tab
 				summarize = new JPanel();
 				summarize.setLayout(new BorderLayout());
