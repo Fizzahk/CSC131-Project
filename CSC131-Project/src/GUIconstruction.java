@@ -8,7 +8,7 @@ public class GUIconstruction {
 		
 		JFrame       frame = new JFrame("Pirex");
 		Container    contentPane = frame.getContentPane();
-		JPanel       search, load, summarize, sp1, sp2, sp3, lp1, lp2;
+		JPanel       search, load, summarize, sp1, sp2, sp3, lp1, lp2, lp3, lp4, lp5;
 		JTabbedPane  tabbedPane;
 		JMenuBar     menuBar;
 		JMenu        helpMenu, optionsMenu, fileMenu, editMenu, historyMenu, viewMenu;
@@ -17,7 +17,7 @@ public class GUIconstruction {
 		JTextField   textField, textField2;
 		JTextArea    textOfLongFormDisplay;
 		JLabel       titleLabel;
-		JButton      clearButton;
+		JButton      clearButton, processButton;
 
 		//Creates and Adds a menu bar to the Pirex Frame
 		menuBar     = new JMenuBar();
