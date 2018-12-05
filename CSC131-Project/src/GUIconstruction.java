@@ -29,6 +29,7 @@ public class GUIconstruction {
 		menuBar.add(fileMenu); //Adds file Menu to the Menu Bar - Pawan (PK) Khatri
 		menuBar.add(optionsMenu);
 		menuBar.add(helpMenu);
+		menuBar.add(editMenu);
 		
 		//Creates File Menu Item (Exit) - Pawan (PK) Khatri
 		JMenuItem exit = new JMenuItem("Exit", KeyEvent.VK_T);
