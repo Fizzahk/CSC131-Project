@@ -15,9 +15,9 @@ public class GUIconstruction {
 		JMenu        helpMenu, optionsMenu, fileMenu, editMenu, historyMenu, viewMenu;
 		JScrollPane  scrollpane;
 		JMenuItem    menuItem; //Can add items inside the file, help, and options in menu bar
-		JTextField   textField, textField1;
+		JTextField   textField, textField1, textField2, textField3, textField5;
 		JTextArea    textOfLongFormDisplay;
-		JLabel       titleLabel, titleLabel1;
+		JLabel       titleLabel, titleLabel2, titleLabel3, titleLabel4, titleLabel1;
 		JButton      clearButton, processButton, browseButton;
 
 		//Creates and Adds a menu bar to the Pirex Frame
@@ -171,7 +171,7 @@ public class GUIconstruction {
 			     lp1.add(textField1, BorderLayout.CENTER);
 			     lp1.add(browseButton, BorderLayout.EAST);
 			     
-			    lp2 = new JPanel(new BorderLayout()); // add text file type west), drop menu(center)
+			    lp2 = new JPanel(new BorderLayout(1, 5)); // add text file type west), drop menu(center)
 			    
 			    titleLabel2 = new JLabel();
 			     titleLabel2.setText("Text File Type: ");
@@ -189,12 +189,12 @@ public class GUIconstruction {
 			    titleLabel3 = new JLabel();
 			     titleLabel3.setText("Title: ");
 			     
-			    textField2 = new JTextField(20);
+			    textField2 = new JTextField();
           
                titleLabel4 = new JLabel();
 			    titleLabel4.setText("Author");
            
-               textField3 = new JTextField(20);
+               textField3 = new JTextField();
            
                //Panel 3
            
@@ -203,9 +203,9 @@ public class GUIconstruction {
                lp3.add(titleLabel4,BorderLayout.EAST);
                
 			    lp4 = new JPanel(new BorderLayout()); // process button, to west
-			    		processButton = new JButton(); //creates button
-			    		processButton.setText("Process");
-			    			lp4.add(processButton, BorderLayout.WEST); //add this button to the west
+			    processButton = new JButton(); //creates button
+			    processButton.setText("Process");
+			    lp4.add(processButton, BorderLayout.WEST); //add this button to the west
 
 			    lp5 = new JPanel(new BorderLayout()); // add textfield to center 
 
@@ -223,7 +223,8 @@ public class GUIconstruction {
 				//Creates Summary Tab
 				summarize = new JPanel();
 				summarize.setLayout(new BorderLayout());
-				tabbedPane.addTab("Summarize Documents",  summarize);
+				tabbedPane.add("Summarize Documents",  summarize);
+				
 				
 
 		        frame.pack();
