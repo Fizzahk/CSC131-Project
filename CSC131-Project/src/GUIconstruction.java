@@ -1,8 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.border.Border;
-import javax.swing.border.MatteBorder;
+
 
 public class GUIconstruction {
 	
