@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.border.Border;
+import javax.swing.border.MatteBorder;
 
 public class GUIconstruction {
 	
@@ -88,13 +90,13 @@ public class GUIconstruction {
          //Adds an action listener to the File Menu Bar Item (Exit) - Pawan (PK) Khatri
 	    exit.addActionListener(new ActionListener(){  
 	    public void actionPerformed(ActionEvent e){ 
-	    	JOptionPane.showMessageDialog(null,"Press ALT-F4 (Windows) or ⌘Q (Mac) to EXIT this application.", "Close Application",JOptionPane.WARNING_MESSAGE);
+	    	JOptionPane.showMessageDialog(null,"Press ALT-F4 (Windows) or вЊ�Q (Mac) to EXIT this application.", "Close Application",JOptionPane.WARNING_MESSAGE);
 	    }});   
 	    
 	    //Adds an action listener to the Help Menu Item
 	    menuItem.addActionListener(new ActionListener(){  
 	    public void actionPerformed(ActionEvent e){ 
-	    	JOptionPane.showMessageDialog(null,"Pirex - (Personal Information Retrieval Experimental System) is an information \n retrieval system that individuals can use to investigate their own texts.",
+	    JOptionPane.showMessageDialog(null,"Pirex - (Personal Information Retrieval Experimental System) is an information \n retrieval system that individuals can use to investigate their own texts.",
 	    			"About",JOptionPane.INFORMATION_MESSAGE);
 	    }});    
  
@@ -105,7 +107,7 @@ public class GUIconstruction {
 		
 		//Start of search tab
 		search = new JPanel();
-		search.setLayout(new BorderLayout());
+		search.setLayout(new BorderLayout(3,10));
 		tabbedPane.addTab("Search For Documents", search);
 				
 	    //first panel in the search tab that has query, textfield and button
@@ -119,24 +121,23 @@ public class GUIconstruction {
 			     clearButton = new JButton();
 				 clearButton.setText("Clear");
 				
-			     sp1.add(titleLabel,BorderLayout.WEST);
-			     sp1.add(textField, BorderLayout.CENTER);
-			     sp1.add(clearButton, BorderLayout.EAST);
-				 
-				 
-				 	search.add(sp1, BorderLayout.NORTH);
+			    sp1.add(titleLabel,BorderLayout.WEST);
+			    sp1.add(textField, BorderLayout.CENTER);
+			    sp1.add(clearButton, BorderLayout.EAST);
+			    
+				search.add(sp1, BorderLayout.NORTH);
 				 
 		//second panel in the screen tab that has a textarea 
-		 sp2 = new JPanel(new GridLayout(1, 1, 2, 600));
+		 sp2 = new JPanel(new GridLayout());
 				
-				 JTextArea ta = new JTextArea(10, 65);
-			     ta.setLineWrap(true);
-			     sp2.add(new JScrollPane(ta));
+		 JTextArea ta = new JTextArea(10, 65);
+		 ta.setLineWrap(true);
+		 sp2.add(new JScrollPane(ta));
+		 search.add(sp2, BorderLayout.CENTER);
 			     
-				 	search.add(sp2, BorderLayout.CENTER);
 			       
 	     // third panel in the search that has the scrollbar    
-		 sp3 = new JPanel(new GridLayout(1, 1, 5, 5));
+		 sp3 = new JPanel(new GridLayout(1, 1));
 			     textOfLongFormDisplay = new JTextArea(10, 64);
 			     JScrollPane  textOfLongFormDisplaySP = new JScrollPane(textOfLongFormDisplay,
 			     JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
@@ -146,13 +147,12 @@ public class GUIconstruction {
 				 	search.add(sp3, BorderLayout.SOUTH);
 				  
 			     clearButton.addActionListener(new ActionListener(){  
-		 public void actionPerformed(ActionEvent e){ 
+			     public void actionPerformed(ActionEvent e){ 
 				 textField.setText("");
 				 textOfLongFormDisplay.setText("");
 			     ta.setText("");
 		 }});
-			    
-				//Start of Load Tab
+			    //Start of Load Tab
 			     load = new JPanel();
 			     load.setLayout(new GridLayout(5, 1)); //gridLayout (rows, columns, horizontal space, vertical space)
 			     tabbedPane.addTab("Load Documents",  load);
