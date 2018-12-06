@@ -173,14 +173,29 @@ public class GUIconstruction {
 			     
 			    lp2 = new JPanel(new BorderLayout()); // add text file type west), drop menu(center)
 			    
-			    lp3 = new JPanel(new BorderLayout()); // add title, textfield, author, textfield
+			    titleLabel2 = new JLabel();
+			     titleLabel2.setText("Text File Type: ");
+			     
+			     //Panel 2 Dropbox
+			     String[] fileType = { " ","", " "," "," "," "};
+                 JComboBox<String> fileTypeList = new JComboBox<String>(fileType);
+            
+                  //Panel 2
+                 lp2.add(titleLabel2, BorderLayout.WEST);                
+			     lp2.add(fileTypeList, BorderLayout.CENTER);				     			    					 
 			    
+			    lp3 = new JPanel(new BorderLayout()); // add title, textfield, author, textfield
+			    			               
 			    lp4 = new JPanel(new BorderLayout()); // process button, to west
 			    		processButton = new JButton(); //creates button
 			    		processButton.setText("Process");
 			    			lp4.add(processButton, BorderLayout.WEST); //add this button to the west
 
 			    lp5 = new JPanel(new BorderLayout()); // add textfield to center 
+
+			    textField5 = new JTextField(600); 
+                
+                lp5.add(textField5,BorderLayout.WEST);
 
 			    //these will add the 5 panels in the load using gridlayout
 			    load.add(lp1);
