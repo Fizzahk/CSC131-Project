@@ -1,3 +1,5 @@
+package finalproject;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -8,12 +10,12 @@ public class GUIconstruction {
 
 		JFrame frame = new JFrame("Pirex");
 		Container contentPane = frame.getContentPane();
-		JPanel search, load, summarize, sp1, sp2, sp3, lp1, lp2, lp3, lp4, lp5;
+		JPanel search, load, summarize, sp1, sp2, sp3, lp1, lp2, lp3, lp4, lp5, panel1, panel2;
 		JTabbedPane tabbedPane;
 		JMenuBar menuBar;
 		JMenu helpMenu, optionsMenu, fileMenu, editMenu, historyMenu, viewMenu;
 		JScrollPane scrollpane;
-		JMenuItem menuItem; // Can add items inside the file, help, and options in menu bar
+		JMenuItem menuItem; 
 		JTextField textField, textField1, textField2, textField3, textField5;
 		JTextArea textOfLongFormDisplay, textOfLongFormDisplaySP1, textArea, textArea1;
 		JLabel titleLabel, titleLabel2, titleLabel3, titleLabel4, titleLabel1;
@@ -21,21 +23,21 @@ public class GUIconstruction {
 
 		// Creates and Adds a menu bar to the Pirex Frame
 		menuBar = new JMenuBar();
-		fileMenu = new JMenu("File"); // Creates file Menu to the Menu Bar - Pawan (PK) Khatri
+		fileMenu = new JMenu("File"); 
 		helpMenu = new JMenu("Help");
 		optionsMenu = new JMenu("Options");
 		editMenu = new JMenu("Edit");
 		historyMenu = new JMenu("History");
 		viewMenu = new JMenu("View");
 
-		menuBar.add(fileMenu); // Adds file Menu to the Menu Bar - Pawan (PK) Khatri
+		menuBar.add(fileMenu); 
 		menuBar.add(viewMenu);
 		menuBar.add(optionsMenu);
 		menuBar.add(editMenu);
 		menuBar.add(historyMenu);
 		menuBar.add(helpMenu);
 
-		// Creates File Menu Item (Exit) - Pawan (PK) Khatri
+		// Creates File Menu Item (Exit) 
 		JMenuItem exit = new JMenuItem("Exit", KeyEvent.VK_T);
 		fileMenu.add(exit);
 
@@ -61,8 +63,7 @@ public class GUIconstruction {
 		JMenuItem viewmenu2 = new JMenuItem("Toggle Fullscreen", KeyEvent.VK_T);
 		viewMenu.add(viewmenu2);
 
-		// Adds an action listener to the Options Menu Bar Item (Documents) - Pawan (PK)
-		// Khatri
+		// Adds an action listener to the Options Menu Bar Item (Documents) 
 		optionsMenu11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "This feature is currently unavailable.", "Documents",
@@ -70,7 +71,7 @@ public class GUIconstruction {
 			}
 		});
 
-		// Adds an action listener to the View Menu Bar Item (Zoom) - Pawan (PK) Khatri
+		// Adds an action listener to the View Menu Bar Item (Zoom) 
 		viewmenu1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "This feature is currently unavailable.", "Zoom",
@@ -78,8 +79,7 @@ public class GUIconstruction {
 			}
 		});
 
-		// Adds an action listener to the View Menu Bar Item (Toggle Fullscreen) - Pawan
-		// (PK) Khatri
+		// Adds an action listener to the View Menu Bar Item (Toggle Fullscreen) 
 		viewmenu2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "This feature is currently unavailable.", "Toggle Fullscreen",
@@ -88,7 +88,7 @@ public class GUIconstruction {
 		});
 
 		// Adds an action listener to the History Menu Bar Item (Recent Searches) -
-		// Pawan (PK) Khatri
+		
 		historymenu1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "This feature is currently unavailable.", "Recent Searches",
@@ -96,7 +96,7 @@ public class GUIconstruction {
 			}
 		});
 
-		// Adds an action listener to the File Menu Bar Item (Exit) - Pawan (PK) Khatri
+		// Adds an action listener to the File Menu Bar Item (Exit) 
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Press ALT-F4 (Windows) or вЊ�Q (Mac) to EXIT this application.",
@@ -166,10 +166,13 @@ public class GUIconstruction {
 		});
 		// Start of Load Tab
 		load = new JPanel();
-		load.setLayout(new GridLayout(5, 1, 20, 40)); // gridLayout (rows, columns, horizontal space, vertical space)
+		load.setLayout(new BorderLayout()); 
 		tabbedPane.addTab("Load Documents", load);
+		
+		// Panel 1. divide into 4 panels
+		panel1 = new JPanel(new GridLayout(4, 1));
 
-		lp1 = new JPanel(new BorderLayout()); // add text file (west), text field(center), browse button (east)
+		lp1 = new JPanel(new BorderLayout()); 
 		titleLabel1 = new JLabel();
 		titleLabel1.setText("Text File:");
 
@@ -179,7 +182,7 @@ public class GUIconstruction {
 		browseButton = new JButton();
 		browseButton.setText("Browse");
 
-		// Panel 1
+		
 		lp1.add(titleLabel1, BorderLayout.WEST);
 		lp1.add(textField1, BorderLayout.CENTER);
 		lp1.add(browseButton, BorderLayout.EAST);
@@ -189,14 +192,14 @@ public class GUIconstruction {
 		titleLabel2 = new JLabel();
 		titleLabel2.setText("Text File Type: ");
 
-		// Panel 2 Dropbox
+		// Panel Dropbox
 		String[] fileType = { " ", "", " ", " ", " ", " " };
 		JComboBox<String> fileTypeList = new JComboBox<String>(fileType);
 
-		// Panel 2
+		// Panel lp2
 		lp2.add(titleLabel2, BorderLayout.WEST);
 		lp2.add(fileTypeList, BorderLayout.CENTER);
-
+		//panel lp3
 		lp3 = new JPanel(new BorderLayout()); // add title, textfield, author, textfield
 
 		titleLabel3 = new JLabel();
@@ -209,29 +212,33 @@ public class GUIconstruction {
 
 		textField3 = new JTextField(600);
 
-		// Panel 3
-
 		lp3.add(titleLabel3, BorderLayout.WEST);
 		lp3.add(textField2, BorderLayout.CENTER);
 		lp3.add(titleLabel4, BorderLayout.EAST);
-
+		// panel lp4
 		lp4 = new JPanel(new BorderLayout()); // process button, to west
 		processButton = new JButton(); // creates button
 		processButton.setText("Process");
 		lp4.add(processButton, BorderLayout.WEST); // add this button to the west
 
+		
+
+		// these will add the 4 panels in the panel 1 of load
+		panel1.add(lp1);
+		panel1.add(lp2);
+		panel1.add(lp3);
+		panel1.add(lp4);
+		load.add(panel1, BorderLayout.NORTH); 
+		
+		//start of panel 2 that will add the textarea
+		panel2 = new JPanel(new BorderLayout());
+
 		lp5 = new JPanel(new BorderLayout()); // add textfield to center
-
 		textArea1 = new JTextArea(800, 200);
+		lp5.add(textArea1, BorderLayout.CENTER);
+		panel2.add(lp5);
+		load.add(panel2, BorderLayout.SOUTH);
 
-		lp5.add(textArea1, BorderLayout.SOUTH);
-
-		// these will add the 5 panels in the load using gridlayout
-		load.add(lp1);
-		load.add(lp2);
-		load.add(lp3);
-		load.add(lp4);
-		load.add(lp5);
 
 		// Creates Summary Tab
 		summarize = new JPanel();
@@ -243,9 +250,10 @@ public class GUIconstruction {
 		summarize.add(scrollPane, "Center");
 		tabbedPane.add("Summarize Documents", summarize);
 
-		frame.pack();
+		
 
 		// The current frame is set to these
+		frame.pack();
 		frame.setSize(800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
