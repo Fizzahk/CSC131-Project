@@ -185,7 +185,23 @@ public class GUIconstruction {
 			     lp2.add(fileTypeList, BorderLayout.CENTER);				     			    					 
 			    
 			    lp3 = new JPanel(new BorderLayout()); // add title, textfield, author, textfield
-			    			               
+			    			       
+			    titleLabel3 = new JLabel();
+			     titleLabel3.setText("Title: ");
+			     
+			    textField2 = new JTextField(20);
+          
+               titleLabel4 = new JLabel();
+			    titleLabel4.setText("Author");
+           
+               textField3 = new JTextField(20);
+           
+               //Panel 3
+           
+               lp3.add(titleLabel3,BorderLayout.WEST);
+			   lp3.add(textField2, BorderLayout.CENTER);
+               lp3.add(titleLabel4,BorderLayout.EAST);
+               
 			    lp4 = new JPanel(new BorderLayout()); // process button, to west
 			    		processButton = new JButton(); //creates button
 			    		processButton.setText("Process");
